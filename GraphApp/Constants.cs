@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace GraphApp
 {
-    static class Constants
+    public static class Constants
     {
-
         public static int PixelSize
         {
             get { return pixelSize; }
             set { pixelSize = value; }
         }
-
-
-   
 
         private static int pixelSize = 3;
     }

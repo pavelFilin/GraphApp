@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace GraphApp
@@ -43,8 +44,17 @@ namespace GraphApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            log.DrawLine(5, 5, 50, 110);
-            pictureBox1.Invalidate();
+            
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            Bitmap bmpSave = (Bitmap)pictureBox1.Image;
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                bmpSave.Save(sfd.FileName, ImageFormat.Jpeg);
+            }
         }
     }
 }
